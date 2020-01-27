@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const request = require('request');
 
 // crio um servidor express
 const app = express();
@@ -19,9 +20,12 @@ const data = [];
 // criação de rota que será acessada utilizando o método HTTP GET/
 // http://localhost:9001/
 app.get('/', (req, res) => {
-  return res.json({ data });
+ return res.json({ retorno:"API 9001" });
 });
-
+// async function fetchUsuario(){
+//   const response = await api.get('/');
+//   console.log(response);
+// }
 // criação de rota que será acessada utilizando o método HTTP POST/
 // http://localhost:9001/add
 app.post('/add', (req, res) => {
@@ -35,14 +39,14 @@ app.post('/add', (req, res) => {
   return res.json({ result });
 });
 
-//var Request = require("request");
+// var Request = require("request");
 
-//Request.get("http://localhost:9000", (error, response, body) => {
+// Request.get("http://localhost:9000/", (error, response, body) => {
 //    if(error) {
 //        return console.dir(error);
 //    }
-//    console.dir(JSON.parse(body));
-//});
+//    console.dir(JSON.parse(response));
+// });
 
 //var Request = require("request");
 
